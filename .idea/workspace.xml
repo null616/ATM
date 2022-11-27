@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28cf0d64-a64e-453f-9170-bbbac81a4ba4" name="变更" comment="后端代码">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/component/BackgroundPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/images/background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/MainInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/ScreenUtils.java" afterDir="false" />
+    <list default="true" id="28cf0d64-a64e-453f-9170-bbbac81a4ba4" name="变更" comment="前端代码">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/controller/ClientLoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/utils/JDBCUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/utils/R.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/druid.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/controller/ClientController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/entity/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/entity/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/mapper/ClientMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/mapper/TransactionMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/service/ClientService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/service/impl/ClientServiceImpl.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +100,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669532344973</updated>
-      <workItem from="1669532346551" duration="6974000" />
+      <workItem from="1669532346551" duration="13964000" />
     </task>
     <task id="LOCAL-00001" summary="后端代码">
       <created>1669535918541</created>
@@ -109,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669535935410</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="前端代码">
+      <created>1669543565954</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669543565954</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,7 +142,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="后端代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="后端代码" />
+    <MESSAGE value="前端代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="前端代码" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
