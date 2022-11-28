@@ -9,5 +9,5 @@ public class Client {
     private String name;
     private String card_number;
     private String password;
-    private Integer balance;
+    private Double balance;
 }

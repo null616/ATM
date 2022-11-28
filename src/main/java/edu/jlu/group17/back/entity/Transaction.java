@@ -10,5 +10,5 @@ public class Transaction {
     private Long id;
     private LocalDateTime createTime;
     private Long clientId;
-    private Integer change;
+    private Double change;
 }

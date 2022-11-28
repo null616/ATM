@@ -1,22 +1,20 @@
 package edu.jlu.group17.front.ui;
 
 import edu.jlu.group17.back.controller.ClientLoginController;
-import edu.jlu.group17.front.component.BackgroundPanel;
-import edu.jlu.group17.front.utils.ScreenUtils;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.io.File;
 import java.io.IOException;
 
-public class MainInterface {
-    JFrame jf=new JFrame("ATM");
-    final int WIDTH=500,HEIGHT=500;
-    public void init() throws IOException {
-        jf.setBounds((ScreenUtils.getScreenWidth()-WIDTH)/2,(ScreenUtils.getScreenHeight()-HEIGHT)/2,WIDTH,HEIGHT);
-        jf.setResizable(false);
-//        jf.setIconImage(ImageIO.read(new File("TODO:")));
-        var bgPanel = new BackgroundPanel(ImageIO.read(new File("F:\\IDEA项目\\ATM\\src\\main\\java\\edu\\jlu\\group17\\front\\images\\background.png")));
+/**
+ * @author 10186
+ */
+public class MainInterface extends AbstractInterface{
+
+    MainInterface() throws IOException {
+    }
+@Override
+    public void init() {
+        jf.setTitle("登录界面");
         //组装登录元素
         Box vBox=Box.createVerticalBox();
         //组装账号
@@ -43,11 +41,16 @@ public class MainInterface {
                 String pwd = pField.getText().trim();
                 var res= ClientLoginController.login(cardNumber,pwd);
                 if(!res.getCode()){
-                    JOptionPane.showMessageDialog(null,res.getMsg(),res.getMsg(),JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(jf,res.getMsg(),res.getMsg(),JOptionPane.ERROR_MESSAGE);
                 }
                 else{
-                    JOptionPane.showMessageDialog(null,res.getData().getName()+"登录成功","登录成功",JOptionPane.INFORMATION_MESSAGE);
-
+                    JOptionPane.showMessageDialog(jf,res.getData().getName()+"登录成功","登录成功",JOptionPane.INFORMATION_MESSAGE);
+                    try {
+                        new OperationInterface(res.getData()).init();
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                    jf.dispose();
                 }
             }
         );
