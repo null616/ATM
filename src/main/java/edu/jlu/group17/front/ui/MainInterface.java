@@ -36,7 +36,7 @@ public class MainInterface extends AbstractInterface{
 
         Box btnBox=Box.createHorizontalBox();
         JButton loginBtn=new JButton("登录");
-        loginBtn.addActionListener((e)->{
+        loginBtn.addActionListener(e->{
                 String cardNumber=uField.getText().trim();
                 String pwd = pField.getText().trim();
                 var res= ClientLoginController.login(cardNumber,pwd);

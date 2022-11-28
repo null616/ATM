@@ -24,6 +24,12 @@ public class InfoInterface extends AbstractInterface{
         box.add(label1);
         box.add(label2);
         box.add(label3);
+        box.add(Box.createVerticalStrut(20));
+        JButton btn=new JButton("返回");
+        btn.addActionListener(e -> {
+
+        });
+        box.add(btn);
         bgPanel.add(box);
         jf.add(bgPanel);
         jf.setVisible(true);

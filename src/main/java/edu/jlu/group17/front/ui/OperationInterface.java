@@ -5,6 +5,9 @@ import edu.jlu.group17.back.entity.Client;
 import javax.swing.*;
 import java.io.IOException;
 
+/**
+ * @author 10186
+ */
 public class OperationInterface extends AbstractInterface{
     private Client client;
     OperationInterface(Client c) throws IOException {
@@ -17,7 +20,54 @@ public class OperationInterface extends AbstractInterface{
         JButton deposit= new JButton("存    款"),transfer=   new JButton("转    账"),
                 withdraw=new JButton("取    款"),transaction=new JButton("流水记录"),
                 info=    new JButton("个人信息"),changePwd=   new JButton("修改密码");
-        //TODO: 六个按钮的ActionListener
+        deposit.addActionListener(e -> {
+            try {
+                new DepositInterface(client).init();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+            jf.dispose();
+        });
+        withdraw.addActionListener(e -> {
+            try {
+                new WithdrawInterface().init();
+            }catch (IOException ex){
+                throw new RuntimeException(ex);
+            }
+            jf.dispose();
+        });
+        info.addActionListener(e -> {
+            try {
+                new InfoInterface(client).init();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+            jf.dispose();
+        });
+        transfer.addActionListener(e -> {
+            try {
+                new TransferInterface().init();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+            jf.dispose();
+        });
+        transaction.addActionListener(e -> {
+            try {
+                new TransactionInterface().init();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+            jf.dispose();
+        });
+        changePwd.addActionListener(e -> {
+            try {
+                new ChangePwdInterface().init();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+            jf.dispose();
+        });
         box1.add(deposit);
         box1.add(Box.createHorizontalStrut(200));
         box1.add(transfer);
