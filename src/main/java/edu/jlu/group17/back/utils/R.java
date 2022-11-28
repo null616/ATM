@@ -7,7 +7,8 @@ import java.util.Map;
 
 @Data
 public class R<T> {
-    private Boolean code;//true成功，false失败
+    //true成功，false失败
+    private Boolean code;
     private String msg;
     private T data;
     private Map<Object, Object> map=new HashMap<>();

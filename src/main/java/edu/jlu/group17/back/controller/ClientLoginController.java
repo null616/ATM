@@ -9,10 +9,13 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.List;
 
+/**
+ * @author 10186
+ */
 public class ClientLoginController {
     public static R<Client> login(String id, String pwd){
         JdbcTemplate template=new JdbcTemplate(JDBCUtils.getDataSource());
-        String sql="select password from client where id=?";
+        String sql="select * from client where id=?";
         List<Client> query = template.query(sql, new BeanPropertyRowMapper<>(Client.class), id);
         if(query.isEmpty()){
             return R.error("插入卡片错误");

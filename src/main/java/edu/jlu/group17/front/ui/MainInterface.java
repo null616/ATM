@@ -1,11 +1,11 @@
 package edu.jlu.group17.front.ui;
 
+import edu.jlu.group17.back.controller.ClientLoginController;
 import edu.jlu.group17.front.component.BackgroundPanel;
+import edu.jlu.group17.front.utils.ScreenUtils;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
@@ -30,7 +30,7 @@ public class MainInterface {
         //组装密码
         Box pBox=Box.createHorizontalBox();
         JLabel pLabel=new JLabel("密 码：");
-        JTextField pField=new JTextField(15);
+        JTextField pField=new JPasswordField(15);
 
         pBox.add(pLabel);
         pBox.add(Box.createHorizontalStrut(20));
@@ -41,7 +41,14 @@ public class MainInterface {
         loginBtn.addActionListener((e)->{
                 String cardNumber=uField.getText().trim();
                 String pwd = pField.getText().trim();
+                var res= ClientLoginController.login(cardNumber,pwd);
+                if(!res.getCode()){
+                    JOptionPane.showMessageDialog(null,res.getMsg(),res.getMsg(),JOptionPane.ERROR_MESSAGE);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null,res.getData().getName()+"登录成功","登录成功",JOptionPane.INFORMATION_MESSAGE);
 
+                }
             }
         );
         btnBox.add(loginBtn);

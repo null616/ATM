@@ -1,4 +1,4 @@
-package edu.jlu.group17.front.ui;
+package edu.jlu.group17.front.utils;
 
 import java.awt.*;
 

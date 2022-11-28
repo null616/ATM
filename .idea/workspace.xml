@@ -4,19 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28cf0d64-a64e-453f-9170-bbbac81a4ba4" name="变更" comment="前端代码">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/controller/ClientLoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/utils/JDBCUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/utils/R.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/druid.properties" afterDir="false" />
+    <list default="true" id="28cf0d64-a64e-453f-9170-bbbac81a4ba4" name="变更" comment="代码">
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/jlu/group17/DBTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/controller/ClientController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/entity/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/entity/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/mapper/ClientMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/mapper/TransactionMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/service/ClientService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/service/impl/ClientServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/controller/ClientLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/controller/ClientLoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/utils/JDBCUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/utils/JDBCUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/utils/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/utils/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/MainInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/MainInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/ScreenUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/utils/ScreenUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/druid.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/druid.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,13 +55,13 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "F:/IDEA项目/ATM/src/main/java/edu/jlu/group17/front/images",
     "project.structure.last.edited": "全局库",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings"
+    "settings.editor.selected.configurable": "MavenSettings",
+    "spring.configuration.checksum": "292f535a3b6fe8853df2f03c8ed890a1"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -72,13 +69,13 @@
       <recent name="F:\IDEA项目\ATM\src\main\java\edu\jlu\group17\front\images" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="应用程序.MainInterface">
     <configuration name="MainInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.jlu.group17.front.ui.MainInterface" />
       <module name="ATM" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.jlu.group17.front.ui.*" />
+          <option name="PATTERN" value="edu.jlu.group17.front.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -86,9 +83,59 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DBTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ATM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.jlu.group17.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.jlu.group17" />
+      <option name="MAIN_CLASS_NAME" value="edu.jlu.group17.DBTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DBTest.test01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ATM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.jlu.group17.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.jlu.group17" />
+      <option name="MAIN_CLASS_NAME" value="edu.jlu.group17.DBTest" />
+      <option name="METHOD_NAME" value="test01" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DBTest.test02" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ATM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.jlu.group17.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.jlu.group17" />
+      <option name="MAIN_CLASS_NAME" value="edu.jlu.group17.DBTest" />
+      <option name="METHOD_NAME" value="test02" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="应用程序.MainInterface" />
+        <item itemvalue="JUnit.DBTest.test02" />
+        <item itemvalue="JUnit.DBTest" />
+        <item itemvalue="JUnit.DBTest.test01" />
       </list>
     </recent_temporary>
   </component>
@@ -100,7 +147,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669532344973</updated>
-      <workItem from="1669532346551" duration="13964000" />
+      <workItem from="1669532346551" duration="14369000" />
+      <workItem from="1669606805590" duration="6517000" />
     </task>
     <task id="LOCAL-00001" summary="后端代码">
       <created>1669535918541</created>
@@ -123,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669543565954</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="代码">
+      <created>1669563746850</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669563746850</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,7 +198,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="后端代码" />
     <MESSAGE value="前端代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="前端代码" />
+    <MESSAGE value="代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="代码" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
