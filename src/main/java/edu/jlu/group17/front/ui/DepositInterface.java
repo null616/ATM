@@ -30,17 +30,20 @@ public class DepositInterface extends AbstractInterface{
             if(confirmDialog!=JOptionPane.YES_OPTION){
                 //TODO
             }
-            double num= Double.parseDouble(field.getText().trim());
-            try {
-                if(OperationController.deposit(num,client.getCard_number())){
-                    JOptionPane.showMessageDialog(jf,"存款成功","存款成功",JOptionPane.INFORMATION_MESSAGE);
+            else {
+                double num= Double.parseDouble(field.getText().trim());
+                try {
+                    if(OperationController.deposit(num,client)){
+                        JOptionPane.showMessageDialog(jf,"存款成功","存款成功",JOptionPane.INFORMATION_MESSAGE);
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(jf,"存款失败","存款失败",JOptionPane.WARNING_MESSAGE);
+                    }
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
                 }
-                else{
-                    JOptionPane.showMessageDialog(jf,"存款失败","存款失败",JOptionPane.WARNING_MESSAGE);
-                }
-            } catch (SQLException ex) {
-                throw new RuntimeException(ex);
             }
+
         });
         btn2.addActionListener(e -> {
             //TODO

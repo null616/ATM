@@ -9,7 +9,7 @@ import java.io.IOException;
  * @author 10186
  */
 public class OperationInterface extends AbstractInterface{
-    private Client client;
+    private final Client client;
     OperationInterface(Client c) throws IOException {
         client=c;
     }
@@ -30,7 +30,7 @@ public class OperationInterface extends AbstractInterface{
         });
         withdraw.addActionListener(e -> {
             try {
-                new WithdrawInterface().init();
+                new WithdrawInterface(client).init();
             }catch (IOException ex){
                 throw new RuntimeException(ex);
             }

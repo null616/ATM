@@ -8,13 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28cf0d64-a64e-453f-9170-bbbac81a4ba4" name="变更" comment="完成基本功能">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/controller/OperationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/utils/JDBCUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/utils/JDBCUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/controller/OperationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/controller/OperationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/DepositInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/DepositInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/InfoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/InfoInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/MainInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/MainInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/OperationInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/OperationInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/WithdrawInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/WithdrawInterface.java" afterDir="false" />
     </list>
@@ -36,6 +33,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/resources/druid.properties" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -63,10 +63,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
     "last_opened_file_path": "F:/IDEA项目/ATM/src/main/java/edu/jlu/group17/front/images",
-    "project.structure.last.edited": "项目",
+    "project.structure.last.edited": "模块",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "editor.preferences.import",
     "spring.configuration.checksum": "292f535a3b6fe8853df2f03c8ed890a1"
   },
@@ -81,7 +83,7 @@
       <recent name="F:\IDEA项目\ATM\src\main\java\edu\jlu\group17\front\images" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.TransferInterface">
+  <component name="RunManager" selected="应用程序.MainInterface">
     <configuration name="ChangePwdInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.jlu.group17.front.ui.ChangePwdInterface" />
       <module name="ATM" />
@@ -95,8 +97,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DepositInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="edu.jlu.group17.front.ui.DepositInterface" />
+    <configuration name="InfoInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.jlu.group17.front.ui.InfoInterface" />
       <module name="ATM" />
       <extension name="coverage">
         <pattern>
@@ -108,8 +110,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InfoInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="edu.jlu.group17.front.ui.InfoInterface" />
+    <configuration name="MainInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.jlu.group17.front.ui.MainInterface" />
       <module name="ATM" />
       <extension name="coverage">
         <pattern>
@@ -149,11 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.MainInterface" />
         <item itemvalue="应用程序.TransferInterface" />
         <item itemvalue="应用程序.ChangePwdInterface" />
         <item itemvalue="应用程序.InfoInterface" />
         <item itemvalue="应用程序.WithdrawInterface" />
-        <item itemvalue="应用程序.DepositInterface" />
       </list>
     </recent_temporary>
   </component>
@@ -166,7 +168,8 @@
       <option name="presentableId" value="Default" />
       <updated>1669532344973</updated>
       <workItem from="1669532346551" duration="14369000" />
-      <workItem from="1669606805590" duration="21121000" />
+      <workItem from="1669606805590" duration="22887000" />
+      <workItem from="1669695467830" duration="2738000" />
     </task>
     <task id="LOCAL-00001" summary="后端代码">
       <created>1669535918541</created>
@@ -217,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669636979426</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="完成基本功能">
+      <created>1669643107411</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1669643107411</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
