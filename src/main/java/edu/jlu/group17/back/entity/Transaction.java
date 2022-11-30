@@ -14,4 +14,5 @@ public class Transaction {
     private LocalDateTime create_time;
     private Long client_id;
     private Double money_change;
+    private String explanation;
 }

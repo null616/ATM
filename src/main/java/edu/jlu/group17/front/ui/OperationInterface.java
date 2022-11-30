@@ -54,7 +54,7 @@ public class OperationInterface extends AbstractInterface{
         });
         transaction.addActionListener(e -> {
             try {
-                new TransactionInterface().init();
+                new TransactionInterface(client).init();
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
@@ -62,7 +62,7 @@ public class OperationInterface extends AbstractInterface{
         });
         changePwd.addActionListener(e -> {
             try {
-                new ChangePwdInterface().init();
+                new ChangePwdInterface(client).init();
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }

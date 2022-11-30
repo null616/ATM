@@ -28,7 +28,7 @@ public class MainInterface extends AbstractInterface{
         //组装密码
         Box pBox=Box.createHorizontalBox();
         JLabel pLabel=new JLabel("密 码：");
-        JTextField pField=new JPasswordField(15);
+    JPasswordField pField=new JPasswordField(15);
 
         pBox.add(pLabel);
         pBox.add(Box.createHorizontalStrut(20));
@@ -38,7 +38,7 @@ public class MainInterface extends AbstractInterface{
         JButton loginBtn=new JButton("登录");
         loginBtn.addActionListener(e->{
                 String cardNumber=uField.getText().trim();
-                String pwd = pField.getText().trim();
+                String pwd = String.valueOf(pField.getPassword()).trim();
                 var res= ClientLoginController.login(cardNumber,pwd);
                 if(!res.getCode()){
                     JOptionPane.showMessageDialog(jf,res.getMsg(),res.getMsg(),JOptionPane.ERROR_MESSAGE);

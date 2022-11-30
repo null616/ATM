@@ -27,7 +27,7 @@ public class ClientLoginController {
             return R.error("插入卡片错误");
         }
         if(!query.get(0).getPassword().equals(pwd)){
-            log.info(String.valueOf(query.get(0)));
+            log.info(query.get(0) +"   "+pwd);
             return R.error("密码错误");
         }
         return R.success(query.get(0));

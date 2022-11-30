@@ -1,6 +1,7 @@
 package edu.jlu.group17.back.controller;
 
 import edu.jlu.group17.back.entity.Client;
+import edu.jlu.group17.back.entity.Transaction;
 import edu.jlu.group17.back.utils.JDBCUtils;
 import edu.jlu.group17.back.utils.R;
 import lombok.extern.slf4j.Slf4j;
@@ -11,6 +12,7 @@ import org.springframework.transaction.support.TransactionSynchronizationManager
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -48,12 +50,12 @@ public class OperationController {
 
     private static boolean depositOrWithdraw(double num, @NotNull Client client, @NotNull JdbcTemplate template, @NotNull Connection conn, String sql1) throws SQLException {
         TransactionSynchronizationManager.initSynchronization();
-        String sql2="insert into atm.transaction (client_id, money_change) VALUES (?,?)";
+        String sql2="insert into atm.transaction (client_id, money_change,explanation) VALUES (?,?,?)";
         log.info(String.valueOf(client));
         int rs1=0,rs2=0;
         try{
             rs1=template.update(sql1,num,client.getCard_number());
-            rs2 = template.update(sql2, client.getId(), num);
+            rs2 = template.update(sql2, client.getId(), num,num>0?"存款":"取款");
             conn.commit();
         }catch (SQLException e){
             e.printStackTrace();
@@ -89,13 +91,13 @@ public class OperationController {
         var conn= Objects.requireNonNull(template.getDataSource()).getConnection();
         conn.setAutoCommit(false);
         String sql1="update client set balance=balance+? where card_number=?";
-        String sql2="insert into atm.transaction (client_id, money_change) VALUES (?,?)";
+        String sql2="insert into atm.transaction (client_id, money_change,explanation) VALUES (?,?,?)";
         int rs1=0,rs2=0,rs3=0,rs4=0;
         try{
             rs1=template.update(sql1,-num,oldClient.getCard_number());
-            rs2=template.update(sql2,oldClient.getId(),-num);
+            rs2=template.update(sql2,oldClient.getId(),-num,"转账给"+newClient.getCard_number());
             rs3=template.update(sql1,num,newClient.getCard_number());
-            rs4=template.update(sql2,newClient.getId(),num);
+            rs4=template.update(sql2,newClient.getId(),num,"转账入账，对方账户："+oldClient.getCard_number());
             conn.commit();
         }catch (SQLException e){
             e.printStackTrace();
@@ -108,5 +110,17 @@ public class OperationController {
             JDBCUtils.close(null,conn);
         }
         return rs1==rs2 && rs3==rs4 && rs2==1 &&rs3==1;
+    }
+
+    public static boolean changePwd(@NotNull Client client, String newPwd){
+        JdbcTemplate template=new JdbcTemplate(JDBCUtils.getDataSource());
+        String sql= "update client set password=? where id=?";
+        return template.update(sql, newPwd, client.getId())==1;
+    }
+
+    public static @NotNull List<Transaction> transaction(@NotNull Client client){
+        JdbcTemplate template=new JdbcTemplate(JDBCUtils.getDataSource());
+        String sql="select * from atm.transaction where client_id=?";
+        return template.query(sql, new BeanPropertyRowMapper<>(Transaction.class), client.getId());
     }
 }
