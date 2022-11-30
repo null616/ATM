@@ -13,7 +13,7 @@ import java.util.Properties;
  * @author 10186
  */
 public class JDBCUtils {
-    private static DataSource ds;
+    private static final DataSource ds;
     static {
         Properties pro=new Properties();
         try {

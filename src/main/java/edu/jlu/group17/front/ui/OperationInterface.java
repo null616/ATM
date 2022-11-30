@@ -46,7 +46,7 @@ public class OperationInterface extends AbstractInterface{
         });
         transfer.addActionListener(e -> {
             try {
-                new TransferInterface().init();
+                new TransferInterface(client).init();
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }

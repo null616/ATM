@@ -4,11 +4,14 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 
+/**
+ * @author 10186
+ */
 @Data
 public class Transaction {
     private static final long serialVersionUID=1L;
     private Long id;
-    private LocalDateTime createTime;
-    private Long clientId;
-    private Double change;
+    private LocalDateTime create_time;
+    private Long client_id;
+    private Double money_change;
 }

@@ -55,7 +55,6 @@ public class MainInterface extends AbstractInterface{
             }
         );
         btnBox.add(loginBtn);
-
         vBox.add(Box.createVerticalStrut(50));
         vBox.add(uBox);
         vBox.add(Box.createVerticalStrut(20));
