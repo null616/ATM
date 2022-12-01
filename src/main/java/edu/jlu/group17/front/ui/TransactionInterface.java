@@ -13,7 +13,8 @@ import java.util.List;
  */
 public class TransactionInterface extends AbstractInterface{
     private final Client client;
-    public TransactionInterface(Client c) throws IOException {
+    public TransactionInterface(Client c) throws IOException, UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+        super();
         client=c;
     }
 
@@ -32,7 +33,13 @@ public class TransactionInterface extends AbstractInterface{
         JTable table=new JTable(data,columnName);
         JButton btn=new JButton("返回");
         btn.addActionListener(e -> {
-
+            try {
+                new OperationInterface(client).init();
+            } catch (IOException | UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException |
+                     IllegalAccessException ex) {
+                throw new RuntimeException(ex);
+            }
+            jf.dispose();
         });
         box.add(new JScrollPane(table));
         JPanel panel=new JPanel();

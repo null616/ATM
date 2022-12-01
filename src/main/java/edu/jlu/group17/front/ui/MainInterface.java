@@ -10,7 +10,8 @@ import java.io.IOException;
  */
 public class MainInterface extends AbstractInterface{
 
-    MainInterface() throws IOException {
+    MainInterface() throws IOException, UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+        super();
     }
 @Override
     public void init() {
@@ -39,18 +40,24 @@ public class MainInterface extends AbstractInterface{
         loginBtn.addActionListener(e->{
                 String cardNumber=uField.getText().trim();
                 String pwd = String.valueOf(pField.getPassword()).trim();
-                var res= ClientLoginController.login(cardNumber,pwd);
-                if(!res.getCode()){
-                    JOptionPane.showMessageDialog(jf,res.getMsg(),res.getMsg(),JOptionPane.ERROR_MESSAGE);
+                if(cardNumber.isEmpty() || pwd.isEmpty()){
+                    JOptionPane.showMessageDialog(jf,"输入不能为空","警告",JOptionPane.WARNING_MESSAGE);
                 }
                 else{
-                    JOptionPane.showMessageDialog(jf,res.getData().getName()+"登录成功","登录成功",JOptionPane.INFORMATION_MESSAGE);
-                    try {
-                        new OperationInterface(res.getData()).init();
-                    } catch (IOException ex) {
-                        throw new RuntimeException(ex);
+                    var res= ClientLoginController.login(cardNumber,pwd);
+                    if(!res.getCode()){
+                        JOptionPane.showMessageDialog(jf,res.getMsg(),res.getMsg(),JOptionPane.ERROR_MESSAGE);
                     }
-                    jf.dispose();
+                    else{
+                        JOptionPane.showMessageDialog(jf,res.getData().getName()+"登录成功","登录成功",JOptionPane.INFORMATION_MESSAGE);
+                        try {
+                            new OperationInterface(res.getData()).init();
+                        } catch (IOException | UnsupportedLookAndFeelException | ClassNotFoundException |
+                                 InstantiationException | IllegalAccessException ex) {
+                            throw new RuntimeException(ex);
+                        }
+                        jf.dispose();
+                    }
                 }
             }
         );
@@ -66,7 +73,7 @@ public class MainInterface extends AbstractInterface{
         jf.add(bgPanel);
         jf.setVisible(true);
     }
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         new MainInterface().init();
     }
 }

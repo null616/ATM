@@ -13,7 +13,8 @@ import java.sql.SQLException;
 public class WithdrawInterface extends AbstractInterface{
     private final Client client;
 
-    WithdrawInterface(Client c) throws IOException {
+    WithdrawInterface(Client c) throws IOException, UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+        super();
         client=c;
     }
 
@@ -28,10 +29,7 @@ public class WithdrawInterface extends AbstractInterface{
         JButton btn1=new JButton("确定"),btn2=new JButton("返回");
         btn1.addActionListener(e -> {
             int confirmDialog = JOptionPane.showConfirmDialog(jf, "确定取款", "提示", JOptionPane.YES_NO_OPTION);
-            if(confirmDialog!=JOptionPane.YES_OPTION){
-                //TODO
-            }
-            else {
+            if(confirmDialog==JOptionPane.YES_OPTION){
                 double num= Double.parseDouble(field.getText().trim());
                 try {
                     if(OperationController.withdraw(num,client)){
@@ -44,10 +42,15 @@ public class WithdrawInterface extends AbstractInterface{
                     throw new RuntimeException(ex);
                 }
             }
-
         });
         btn2.addActionListener(e -> {
-            //TODO
+            try {
+                new OperationInterface(client).init();
+            } catch (IOException | UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException |
+                     IllegalAccessException ex) {
+                throw new RuntimeException(ex);
+            }
+            jf.dispose();
         });
         box2.add(btn1);
         box2.add(Box.createHorizontalStrut(20));
@@ -62,7 +65,7 @@ public class WithdrawInterface extends AbstractInterface{
         jf.setVisible(true);
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         new WithdrawInterface(null).init();
     }
 }

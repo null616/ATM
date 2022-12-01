@@ -12,7 +12,8 @@ import java.sql.SQLException;
  */
 public class TransferInterface extends AbstractInterface{
     private final Client client;
-    public TransferInterface(Client c) throws IOException {
+    public TransferInterface(Client c) throws IOException, UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+        super();
         client=c;
     }
 
@@ -55,14 +56,16 @@ public class TransferInterface extends AbstractInterface{
                         throw new RuntimeException(ex);
                     }
                 }
-                else{
-                    //TODO:
-                }
             }
-
         });
         btn2.addActionListener(e -> {
-            //TODO:
+            try {
+                new OperationInterface(client).init();
+            } catch (IOException | UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException |
+                     IllegalAccessException ex) {
+                throw new RuntimeException(ex);
+            }
+            jf.dispose();
         });
         box3.add(btn1);
         box3.add(Box.createHorizontalStrut(50));
@@ -80,7 +83,7 @@ public class TransferInterface extends AbstractInterface{
         jf.setVisible(true);
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         new TransferInterface(null).init();
     }
 }

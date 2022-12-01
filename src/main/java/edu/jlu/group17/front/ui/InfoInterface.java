@@ -10,7 +10,8 @@ import java.io.IOException;
  */
 public class InfoInterface extends AbstractInterface{
     private final Client client;
-    public InfoInterface(Client c) throws IOException {
+    public InfoInterface(Client c) throws IOException, UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+        super();
         client=c;
     }
 
@@ -27,7 +28,13 @@ public class InfoInterface extends AbstractInterface{
         box.add(Box.createVerticalStrut(20));
         JButton btn=new JButton("返回");
         btn.addActionListener(e -> {
-
+            try {
+                new OperationInterface(client).init();
+            } catch (IOException | UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException |
+                     IllegalAccessException ex) {
+                throw new RuntimeException(ex);
+            }
+            jf.dispose();
         });
         box.add(btn);
         bgPanel.add(box);
@@ -35,7 +42,7 @@ public class InfoInterface extends AbstractInterface{
         jf.setVisible(true);
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         Client c=new Client();
         c.setCard_number("622203011195143");
         c.setName("测试");

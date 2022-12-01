@@ -9,13 +9,16 @@
   <component name="ChangeListManager">
     <list default="true" id="28cf0d64-a64e-453f-9170-bbbac81a4ba4" name="变更" comment="完成基本功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/controller/ClientLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/controller/ClientLoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/controller/OperationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/controller/OperationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/entity/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/back/entity/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/AbstractInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/AbstractInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/ChangePwdInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/ChangePwdInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/DepositInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/DepositInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/InfoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/InfoInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/MainInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/MainInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/OperationInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/OperationInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/TransactionInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/TransactionInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/TransferInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/TransferInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/WithdrawInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/jlu/group17/front/ui/WithdrawInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +69,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "extract.method.default.visibility": "private",
-    "last_opened_file_path": "F:/IDEA项目/ATM/src/main/java/edu/jlu/group17/front/images",
+    "last_opened_file_path": "F:/IDEA项目/Project01",
     "project.structure.last.edited": "模块",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -154,10 +157,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="应用程序.MainInterface" />
-        <item itemvalue="应用程序.TransferInterface" />
-        <item itemvalue="应用程序.ChangePwdInterface" />
-        <item itemvalue="应用程序.InfoInterface" />
         <item itemvalue="应用程序.WithdrawInterface" />
+        <item itemvalue="应用程序.TransferInterface" />
+        <item itemvalue="应用程序.InfoInterface" />
+        <item itemvalue="应用程序.ChangePwdInterface" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +174,10 @@
       <updated>1669532344973</updated>
       <workItem from="1669532346551" duration="14369000" />
       <workItem from="1669606805590" duration="22887000" />
-      <workItem from="1669695467830" duration="22697000" />
+      <workItem from="1669695467830" duration="23549000" />
+      <workItem from="1669815335840" duration="1253000" />
+      <workItem from="1669872640342" duration="4964000" />
+      <workItem from="1669897281137" duration="612000" />
     </task>
     <task id="LOCAL-00001" summary="后端代码">
       <created>1669535918541</created>
@@ -243,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669807996361</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="完成基本功能">
+      <created>1669814652183</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1669814652183</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

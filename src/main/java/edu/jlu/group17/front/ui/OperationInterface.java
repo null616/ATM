@@ -10,7 +10,8 @@ import java.io.IOException;
  */
 public class OperationInterface extends AbstractInterface{
     private final Client client;
-    OperationInterface(Client c) throws IOException {
+    OperationInterface(Client c) throws IOException, UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+        super();
         client=c;
     }
     @Override
@@ -23,7 +24,8 @@ public class OperationInterface extends AbstractInterface{
         deposit.addActionListener(e -> {
             try {
                 new DepositInterface(client).init();
-            } catch (IOException ex) {
+            } catch (IOException | UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException |
+                     IllegalAccessException ex) {
                 throw new RuntimeException(ex);
             }
             jf.dispose();
@@ -31,7 +33,8 @@ public class OperationInterface extends AbstractInterface{
         withdraw.addActionListener(e -> {
             try {
                 new WithdrawInterface(client).init();
-            }catch (IOException ex){
+            }catch (IOException | UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException |
+                    IllegalAccessException ex){
                 throw new RuntimeException(ex);
             }
             jf.dispose();
@@ -39,7 +42,8 @@ public class OperationInterface extends AbstractInterface{
         info.addActionListener(e -> {
             try {
                 new InfoInterface(client).init();
-            } catch (IOException ex) {
+            } catch (IOException | UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException |
+                     IllegalAccessException ex) {
                 throw new RuntimeException(ex);
             }
             jf.dispose();
@@ -47,7 +51,8 @@ public class OperationInterface extends AbstractInterface{
         transfer.addActionListener(e -> {
             try {
                 new TransferInterface(client).init();
-            } catch (IOException ex) {
+            } catch (IOException | UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException |
+                     IllegalAccessException ex) {
                 throw new RuntimeException(ex);
             }
             jf.dispose();
@@ -55,7 +60,8 @@ public class OperationInterface extends AbstractInterface{
         transaction.addActionListener(e -> {
             try {
                 new TransactionInterface(client).init();
-            } catch (IOException ex) {
+            } catch (IOException | UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException |
+                     IllegalAccessException ex) {
                 throw new RuntimeException(ex);
             }
             jf.dispose();
@@ -63,7 +69,8 @@ public class OperationInterface extends AbstractInterface{
         changePwd.addActionListener(e -> {
             try {
                 new ChangePwdInterface(client).init();
-            } catch (IOException ex) {
+            } catch (IOException | UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException |
+                     IllegalAccessException ex) {
                 throw new RuntimeException(ex);
             }
             jf.dispose();
@@ -93,7 +100,7 @@ public class OperationInterface extends AbstractInterface{
         jf.setVisible(true);
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         new OperationInterface(null).init();
     }
 }

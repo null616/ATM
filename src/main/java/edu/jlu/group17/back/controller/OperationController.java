@@ -6,6 +6,7 @@ import edu.jlu.group17.back.utils.JDBCUtils;
 import edu.jlu.group17.back.utils.R;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
@@ -78,12 +79,14 @@ public class OperationController {
     public static R<Client> transferGetName(String cardNumber){
         JdbcTemplate template=new JdbcTemplate(JDBCUtils.getDataSource());
         String sql="select * from client where card_number=?";
-        var query = template.queryForObject(sql, new BeanPropertyRowMapper<>(Client.class), cardNumber);
-        if(query==null) {
-            return R.error("无该银行卡账号");
-        } else {
-            return R.success(query);
+        boolean tag=true;
+        Client query=null;
+        try {
+            query = template.queryForObject(sql, new BeanPropertyRowMapper<>(Client.class), cardNumber);
+        }catch (EmptyResultDataAccessException e){
+            tag=false;
         }
+            return tag?R.success(query):R.error("无该银行卡账号");
     }
     public static boolean transfer(Client oldClient,Client newClient,double num) throws SQLException {
         TransactionSynchronizationManager.initSynchronization();
@@ -120,7 +123,7 @@ public class OperationController {
 
     public static @NotNull List<Transaction> transaction(@NotNull Client client){
         JdbcTemplate template=new JdbcTemplate(JDBCUtils.getDataSource());
-        String sql="select * from atm.transaction where client_id=?";
+        String sql="select * from atm.transaction where client_id=? order by create_time";
         return template.query(sql, new BeanPropertyRowMapper<>(Transaction.class), client.getId());
     }
 }
